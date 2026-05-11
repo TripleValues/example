@@ -1,0 +1,158 @@
+/* App.css */
+:root {
+  --sidebar-width: 260px;
+  --top-header-height: 64px;
+  --primary-color: #4f46e5;
+  --bg-gray: #f8fafc;
+  --text-dark: #1e293b;
+  --border-color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  background-color: var(--bg-gray);
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: #ffffff;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+}
+
+.sidebar-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.logo-text span {
+  color: var(--primary-color);
+}
+
+.nav-links {
+  list-style: none;
+  padding: 20px 12px;
+  flex-grow: 1;
+}
+
+.nav-links li {
+  margin-bottom: 8px;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: #f1f5f9;
+  color: var(--primary-color);
+}
+
+.nav-links a.active {
+  background-color: #eff6ff;
+  color: var(--primary-color);
+}
+
+.sidebar-footer {
+  padding: 20px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Main Content Styles */
+.content-area {
+  margin-left: var(--sidebar-width);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-header {
+  height: var(--top-header-height);
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.search-bar input {
+  background: #f1f5f9;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  width: 300px;
+  font-size: 0.9rem;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-role {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.page-container {
+  padding: 24px;
+  max-width: 1400px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 80px;
+  }
+  .sidebar span, .logo-text, .sidebar-footer {
+    display: none;
+  }
+  .content-area {
+    margin-left: 80px;
+  }
+}
